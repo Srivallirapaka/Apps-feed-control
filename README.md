@@ -18,6 +18,36 @@ Apps Feed Control is an intelligent app that filters and organizes content feeds
 
  Permission Handling: Secure access to camera, microphone, and app APIs.
  Custom Profiles: Set mood manually or auto-detect using AI.
+AI Mood Detection
+The app uses:
+
+Facial Expression Recognition – OpenCV + CNN-based model.
+
+Voice Sentiment Analysis – MFCC features + RNN/Transformer.
+
+You can train your own model or use the provided pre-trained weights.
+ Permissions
+This app requires the following:
+
+Camera access (for facial recognition)
+
+Microphone access (for voice mood detection)
+
+Internet access (for API fetch)
+
+All permissions are handled securely with user consent prompts.
+
+ Project Structure
+
+ Future Improvements
+Integrate wearable data (heart rate, sleep) for mood analysis
+
+Offline mode support
+
+Add journaling or mental health check-ins
+
+Auto-suggest content blocking for Do-Not-Disturb
+
 
 
 
