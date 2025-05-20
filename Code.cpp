@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <set>
+#include <limits>
 
 using namespace std;
 
@@ -36,12 +38,16 @@ int getUserModeSelection() {
     cout << "4. EntertainmentOnly\n";
     cout << "5. All Feeds\n";
     cout << "Choose a mode (1-5): ";
-    cin >> choice;
+    while (!(cin >> choice) || choice < 1 || choice > 5) {
+        cout << "Invalid input. Please enter a number between 1 and 5: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
     return choice;
 }
 
 int main() {
-    vector<Feed> appFeeds = {
+    const vector<Feed> appFeeds = {
         {"YouTube", "Top 10 Study Hacks", "study"},
         {"News", "India Wins U19 World Cup", "sports"},
         {"YouTube", "Funny Cat Videos", "entertainment"},
@@ -75,13 +81,16 @@ int main() {
             selectedCategories = {"entertainment"};
             modeName = "EntertainmentOnly";
             break;
-        case 5:
+        case 5: {
+            set<string> uniqueCategories;
             for (const auto& feed : appFeeds)
-                selectedCategories.push_back(feed.category);  // Allow all categories
+                uniqueCategories.insert(feed.category);  // Allow all unique categories
+            selectedCategories.assign(uniqueCategories.begin(), uniqueCategories.end());
             modeName = "All";
             break;
+        }
         default:
-            cout << "Invalid choice. Defaulting to KidsOnly mode.\n";
+            // Should never reach here due to input validation
             selectedCategories = {"study", "sports"};
             modeName = "KidsOnly";
     }
