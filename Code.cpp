@@ -14,7 +14,6 @@ struct Feed {
     string subcategory; // New field for study subcategory
 };
 
-// Function to display feeds based on selected categories and subcategories
 void displayFilteredFeeds(const vector<Feed>& feeds, const vector<string>& allowedCategories,
                           const string& modeName, const string& subcategory = "") {
     cout << "\n--- Mode: " << modeName;
