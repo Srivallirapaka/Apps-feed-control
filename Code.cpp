@@ -11,7 +11,7 @@ struct Feed {
     string type;
     string title;
     string category;
-    string subcategory; // New field for study subcategory
+    string subcategory; 
 };
 
 void displayFilteredFeeds(const vector<Feed>& feeds, const vector<string>& allowedCategories,
