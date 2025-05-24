@@ -43,7 +43,7 @@ void displayFilteredFeeds(const vector<Feed>& feeds, const vector<string>& allow
     }
 }
 
-// Function to display mode menu and return user selection
+
 int getUserModeSelection() {
     int choice;
     cout << "\n===== Feed Filter Modes =====\n";
