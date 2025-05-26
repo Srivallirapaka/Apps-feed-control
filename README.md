@@ -48,6 +48,8 @@ Add journaling or mental health check-ins
 
 Auto-suggest content blocking for Do-Not-Disturb
 
+C++ compiler (e.g., g++, Visual Studio, etc.)
+
 
 
 
